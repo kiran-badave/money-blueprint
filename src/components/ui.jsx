@@ -10,7 +10,7 @@ export function StepTitle({ step, children }) {
 
 export function Section({ id, step, title, children }) {
   return (
-    <section id={id} className="scroll-mt-24 py-8">
+    <section id={id} className="scroll-mt-32 py-8">
       <StepTitle step={step}>{title}</StepTitle>
       {children}
     </section>

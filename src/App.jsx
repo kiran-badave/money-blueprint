@@ -9,6 +9,7 @@ import SinkingFund from './components/SinkingFund.jsx';
 import InvestmentEngine from './components/InvestmentEngine.jsx';
 import GoalMatrix from './components/GoalMatrix.jsx';
 import MonthlyReview from './components/MonthlyReview.jsx';
+import Dashboard from './components/Dashboard.jsx';
 import { budgetLimits, emergencyTarget, sumByCategory } from './utils/finance.js';
 
 export default function App() {
@@ -39,11 +40,20 @@ export default function App() {
       />
 
       <main className="mx-auto max-w-5xl px-4 pb-16">
-        <div className="pt-10 pb-2">
-          <h1 className="font-serif text-3xl font-bold leading-tight sm:text-5xl">
-            <span className="highlight">How To Manage Your Money Like The 1%</span>
+        <div className="pt-8 pb-2">
+          <h1 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">
+            <span className="highlight">Your Money Dashboard</span>
           </h1>
-          <p className="mt-4 max-w-2xl text-gray-600">A 9-step system — with calculators — to give every rupee a job.</p>
+          <p className="mt-3 max-w-2xl text-gray-600">
+            A live overview of your budget, safety net, investments and goals. Edit the numbers in the 9-step system below and everything here updates.
+          </p>
+        </div>
+
+        <Dashboard data={data} expenses={expenses} target={target} complete={complete} />
+
+        <div className="mt-6 border-t border-gray-200 pt-8">
+          <h2 className="font-serif text-2xl font-bold sm:text-3xl">The 9-step system</h2>
+          <p className="mt-1 text-gray-600">Update your numbers here. Each step feeds the dashboard above.</p>
         </div>
 
         <BudgetAllocator data={data} update={update} />

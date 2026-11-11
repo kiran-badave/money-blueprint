@@ -1,3 +1,15 @@
+const NAV = [
+  ['dashboard', 'Dashboard'],
+  ['step1', 'Track'],
+  ['step2', 'Budget'],
+  ['step3', 'Accounts'],
+  ['step4', 'Emergency'],
+  ['step5', 'Annual bills'],
+  ['step6', 'Invest'],
+  ['step7', 'Goals'],
+  ['step8', 'Review'],
+];
+
 export default function SyncBar({ configured, dirty, status, onPush, onPull, onSettings }) {
   const busy = status.type === 'loading';
   return (
@@ -22,6 +34,17 @@ export default function SyncBar({ configured, dirty, status, onPush, onPull, onS
           {busy ? 'Working…' : 'Save to Cloud / Push Changes'}
         </button>
       </div>
+      <nav className="mx-auto flex max-w-5xl gap-1 overflow-x-auto px-4 pb-2" aria-label="Sections">
+        {NAV.map(([id, label]) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className="whitespace-nowrap rounded-full px-3 py-1 text-xs font-medium text-gray-600 hover:bg-highlight hover:text-ink"
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
       {status.message && (
         <div
           className={`px-4 py-1.5 text-center text-xs font-medium ${
