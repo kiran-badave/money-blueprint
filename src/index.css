@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-highlight: #fef08a;
+  --color-ink: #1f2937;
+  --color-paper: #faf9f6;
+  --font-serif: Georgia, 'Times New Roman', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Yellow marker-style highlight used for step titles */
+.highlight {
+  background: var(--color-highlight);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0.05em 0.4em;
+  border-radius: 0.2em;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: #fff;
+  color: var(--color-ink);
+}
+.input:focus {
+  outline: 2px solid #facc15;
+  outline-offset: 1px;
+}
+
+.btn {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  background: var(--color-ink);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn-yellow {
+  background: var(--color-highlight);
+  color: var(--color-ink);
+  border: 1px solid #eab308;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1px solid #d1d5db;
+}
