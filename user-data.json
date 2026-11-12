@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "salary": 150000,
+  "salary": 200000,
   "salaryDay": 1,
   "lineItems": [
     {
@@ -95,5 +95,5 @@
     "month": "2026-11",
     "done": {}
   },
-  "updatedAt": "2026-11-11T17:22:16.070Z"
+  "updatedAt": "2026-11-12T03:21:26.444Z"
 }
