@@ -30,13 +30,17 @@ export function NumberField({ value, onChange, label, prefix = '₹', min = 0, s
     <label className={`block ${className}`}>
       {label && <span className="block text-sm font-medium mb-1">{label}</span>}
       <span className="relative block">
-        {prefix && <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">{prefix}</span>}
+        {prefix && (
+          <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 select-none">
+            {prefix}
+          </span>
+        )}
         <input
           type="number"
           inputMode="decimal"
           min={min}
           step={step}
-          className={`input ${prefix ? 'pl-7' : ''}`}
+          className={`input ${prefix ? 'pl-8' : ''}`}
           value={value === 0 ? '' : value}
           placeholder="0"
           onChange={(e) => onChange(e.target.value === '' ? 0 : Math.max(min, parseFloat(e.target.value) || 0))}
